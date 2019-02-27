@@ -1,0 +1,7 @@
+module.exports.compile = (o, context) => o(`
+    <div class="header-wrap">
+        <a href="/">
+            ${context._c.website.sitetitle}
+        </a>
+    </div>
+`);
