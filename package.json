@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Default Lilium theme for presentation purposes.",
   "main": "entry.js",
-  "scripts": { },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/narcitymedia/lilium-violet-theme.git"

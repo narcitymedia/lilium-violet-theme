@@ -1,0 +1,12 @@
+const settings = {
+
+};
+
+const compile = (o, context) => { o(`
+
+    <h1>${context.extra.article.title}</h1>
+
+`); }
+
+module.exports = { settings, compile };
+

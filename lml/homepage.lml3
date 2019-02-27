@@ -1,0 +1,13 @@
+const settings = {
+
+}
+
+const preload = (_c, context, done) => {
+    done();
+};
+
+const compile = (o, context) => {
+
+}
+
+module.exports = { settings, preload, compile };

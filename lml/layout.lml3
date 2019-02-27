@@ -1,0 +1,15 @@
+const settings = {
+
+};
+
+const compile = (o, context) => o(`<!DOCTYPE html>
+<html>
+    <head>
+        <title>${context._c.website.sitetitle}</title>
+    </head>
+    <body>
+        ${context.extra.contentHTML}
+    </body>
+</html>`);
+
+module.exports = { settings, compile };
