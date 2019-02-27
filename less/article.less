@@ -1,0 +1,63 @@
+article {
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-weight: normal;
+        text-align: center;
+        font-size: 48px;
+        margin: 0px auto 20px auto;
+
+        width: @safewidth;
+    }
+
+    .content {
+        width: 640px;
+        margin: 20px auto;
+        font-size: 20px;
+        font-family: 'Tinos', serif;
+        line-height: 30px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .edition-wrap {
+        text-align: center;
+        padding: 20px;
+
+        a {
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 1px;
+            color: #999;
+            font-family: 'Arial';
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+
+    .title-sep {
+        width: 200px;
+        margin: auto;
+        padding: 10px 0px;
+
+        hr {
+            height: 1px;
+            border: none;
+            border-top: 1px solid #CCC;
+        }
+    }
+
+    .featured-image-wrap {
+        height: 420px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
