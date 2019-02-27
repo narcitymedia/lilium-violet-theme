@@ -2,10 +2,33 @@ const settings = {
 
 };
 
-const compile = (o, context) => { o(`
+const compile = (o, context) => { 
+    const edition = context.extra.article.alleditions[
+        context.extra.article.alleditions.length - 1
+    ].lang[context.article.language];
 
-    <h1>${context.extra.article.title}</h1>
+    const editionSlug = "/" + context.extra.article.alleditions.map(
+        ed => ed.lang[context.article.language].slug
+    ).join('/');
 
+o(`
+    <article>
+        <div class="featured-image-wrap">
+            <img src="${context.extra.article.facebookmedia}" class="featured-image" />
+        </div>
+        <div class="content-wrap">
+            <div class="edition-wrap">
+                <a href="${editionSlug}">${edition.displayname}</a>
+            </div>
+            <h1>${context.extra.article.title}</h1>
+            <div class="title-sep">
+                <hr />
+            </div>
+            <div class="content">
+                ${context.extra.article.content}
+            </div>
+        </div>
+    </article>
 `); }
 
 module.exports = { settings, compile };

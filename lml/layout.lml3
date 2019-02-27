@@ -1,14 +1,24 @@
 const settings = {
-
+    petals : ["head", "foot", "topbar"]
 };
 
 const compile = (o, context) => o(`<!DOCTYPE html>
 <html>
     <head>
-        <title>${context._c.website.sitetitle}</title>
+        ${context.petals.head.compile()}
+        <link rel="stylesheet" type="text/css" href="/style.css" />
     </head>
     <body>
-        ${context.extra.contentHTML}
+        <header>
+            ${context.petals.topbar.compile()}
+        </header>
+        <main>
+            ${context.extra.contentHTML}
+        </main>
+
+        <footer>
+            ${context.petals.foot.compile()}
+        </footer>
     </body>
 </html>`);
 

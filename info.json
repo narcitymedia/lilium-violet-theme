@@ -10,6 +10,6 @@
     },
     "layout" : "lml/layout.lml3",
     "settingForm" : {
-        
+        "analyticsviewid" : { "type" : "text", "attr" : {"displayname" : "Google Analytics View ID"}, "default" : "UA-"}
     }
 }
