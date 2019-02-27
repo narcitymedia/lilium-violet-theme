@@ -1,0 +1,6 @@
+module.exports.compile = (o, context) => {
+    switch (context.ctx) {
+        case "article" : o(`<title>${context.extra.article.title} - ${context._c.website.sitetitle}</title>`); break;
+        default : o(`<title>${context._c.website.sitetitle}</title>`);
+    }
+};
