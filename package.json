@@ -1,0 +1,17 @@
+{
+  "name": "lilium-violet-theme",
+  "version": "1.0.0",
+  "description": "Default Lilium theme for presentation purposes.",
+  "main": "entry.js",
+  "scripts": { },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narcitymedia/lilium-violet-theme.git"
+  },
+  "author": "https://github.com/rykdesjardins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/narcitymedia/lilium-violet-theme/issues"
+  },
+  "homepage": "https://github.com/narcitymedia/lilium-violet-theme#readme"
+}

@@ -1,0 +1,15 @@
+{
+    "uName" : "lilium-violet-theme",
+    "dName" : "Lilium Violet Theme",
+    "entry": "entry.js",
+    "version" : 1.0,
+    "contexts" : {
+        "article" : "lml/article.lml3",
+        "homepage" : "lml/homepage.lml3",
+        "amp" : "lml/amp.lml3"
+    },
+    "layout" : "lml/layout.lml3",
+    "settingForm" : {
+        
+    }
+}
