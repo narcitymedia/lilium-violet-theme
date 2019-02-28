@@ -6,7 +6,7 @@ module.exports.compile = (o, context) => o(`
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', '${context.theme.settings.analyticsviewid||""}');
+    gtag('config', '${(context.theme.settings && context.theme.settings.analyticsviewid) || ""}');
 </script>
 
 
