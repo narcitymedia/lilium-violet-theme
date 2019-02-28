@@ -1,0 +1,7 @@
+const settings = {};
+
+const compile = (o, context) => o(`<div class="styled-page">
+    <h2>Could not find the page you are looking for</h2>
+</div>`);
+
+module.exports = { settings, compile };

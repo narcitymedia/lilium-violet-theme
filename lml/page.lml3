@@ -1,0 +1,10 @@
+const settings = {};
+
+const compile = (o, context) => o(`<div class="styled-page">
+    <h1>${context.extra.page.title}</h1>
+    <div class="styled-page-body">
+        ${context.extra.page.content}
+    </div>
+</div>`);
+
+module.exports = { settings, compile };

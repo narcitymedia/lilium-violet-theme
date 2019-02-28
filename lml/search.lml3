@@ -1,0 +1,11 @@
+const settings = {
+    petals : ["querybar"]
+};
+
+const compile = (o, context) => o(`
+    <div>
+        ${context.petals.querybar.compile()}
+    </div>
+`);
+
+module.exports = { compile, settings };

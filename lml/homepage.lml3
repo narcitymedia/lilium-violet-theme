@@ -2,12 +2,30 @@ const settings = {
 
 }
 
-const preload = (_c, context, done) => {
+const preload = (context, done) => {
     done();
 };
 
-const compile = (o, context) => {
+const makePost = post => `<div class="card">
+    <a href="${post.url}">
+        <img src="${post.featuredimage.sizes.square.url}" />
+        <div class="card-title">${post.title[0]}</div>
+        <div class="card-subtitle">${post.subtitle[0]}</div>
+    </a>
+</div>`;
 
+const compile = (o, context) => {
+    const posts = context.extra.posts;
+
+    if (posts.length == 0) {
+        o(`<div>
+            <h2 class="no-post-message">There are no articles on this website</h2>
+        </div>`);
+    } else {
+        o(`<div class="homepage-list">
+            ${posts.map(post => makePost(post)).join('')}
+        </div>`);
+    }
 }
 
 module.exports = { settings, preload, compile };

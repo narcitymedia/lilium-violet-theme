@@ -5,8 +5,12 @@
     "version" : 1.0,
     "contexts" : {
         "article" : "lml/article.lml3",
-        "homepage" : "lml/homepage.lml3",
-        "amp" : "lml/amp.lml3"
+        "styledpage" : "lml/page.lml3",
+        "home" : "lml/homepage.lml3",
+        "search" : "lml/search.lml3",
+        "amp" : "lml/amp.lml3",
+
+        "404" : "lml/404.lml3"
     },
     "layout" : "lml/layout.lml3",
     "settingForm" : {

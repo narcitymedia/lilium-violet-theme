@@ -2,18 +2,43 @@ header {
     height: 50px;
     background-color: #262626;
 
-    .header-wrap {
+    .hamburger, .search {
+        font-size: 26px;
+        color: #af57e4;
+        display: inline-block;
+        padding: 0px 12px;
+        vertical-align: middle;
+        cursor: pointer;
+        width: 28px;
         text-align: center;
-        padding-top: 8px;
 
         a {
             color: #af57e4;
+        }
+    }
+
+    .left {
+        
+    }
+
+    .right {
+        text-align: right;
+        flex-grow : 1
+    }
+
+    .header-wrap {
+        padding-top: 8px;
+        display: flex;
+
+        .page-title {
+            color: #af57e4;
             width: @safewidth;
             margin: auto;
-            font-size: 26px;
+            font-size: 22px;
             font-family: 'Nunito Sans', sans-serif;
             text-decoration: none;
             letter-spacing: -0.5px;
+            vertical-align: middle;
         }
     }
 }

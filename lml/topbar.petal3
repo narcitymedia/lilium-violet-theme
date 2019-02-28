@@ -1,7 +1,17 @@
 module.exports.compile = (o, context) => o(`
     <div class="header-wrap">
-        <a href="/">
-            ${context._c.website.sitetitle}
-        </a>
+        <div class="left">
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <a class="page-title" href="/">${context._c.website.sitetitle}</a>
+        </div>
+        <div class="right">
+            <div class="search">
+                <a href="/search">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+        </div>
     </div>
 `);

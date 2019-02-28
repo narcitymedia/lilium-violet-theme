@@ -61,3 +61,71 @@ article {
         }
     }
 }
+
+.card {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    margin: 20px;
+    width: 400px;
+    background: white;
+    border: 1px solid #EEE;
+    border-radius : 6px;
+    overflow: hidden;
+
+    a { 
+        display: block; 
+        text-decoration: none;
+    }
+
+    img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-title {
+        color: #333;
+        font-size: 20px;
+        padding: 10px 15px;
+    }
+
+    .card-subtitle {
+        font-size: 14px;
+        padding: 0px 15px 15px;
+        color: #555;
+    }
+}
+
+.homepage-list {
+    width: 1000px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.no-post-message {
+    text-align: center;
+    padding: 20px;
+    color: #AAA;
+    font-size: 32px;
+}
+
+.styled-page {
+    width: 640px;
+    margin: auto;
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-weight: normal;
+        font-size: 48px;
+
+        width: @safewidth;
+    }
+
+    .styled-page-body {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

@@ -1,0 +1,89 @@
+module.exports.compile = (o, context) => o(`<div>
+
+    <div class="search-wrap">
+        <h2>Search for an article</h2>
+        <div class="search-widget">
+            <input type="text" id="searchbox" />
+            <div class="search-button">Search</div>
+        </div>
+    </div>
+
+    <div class="search-results-wrap">
+        <h3 class="search-error"></h3>
+        <div class="search-loading-wrap">
+            <i class="search-loading fa-spin fas fa-circle-notch"></i>
+        </div>
+        <div class="search-results"></div>
+    </div>
+
+    <script>
+        var elSpin = document.querySelector('.search-loading');
+
+        function addResult(list, post) {
+            var wrap = document.createElement('div');
+            var link = document.createElement('a');
+
+            wrap.className = "search-result-item";
+            link.textContent = post.title[0];
+            link.setAttribute('href', post.url);
+
+            wrap.appendChild(link);
+            list.appendChild(wrap);
+        }
+
+        function handleSearchResults() {
+            var xhttp = this;
+            var status = xhttp.status;
+            var txt = xhttp.responseText;
+
+            var elRes = document.querySelector('.search-results');
+            var elErr = document.querySelector('.search-error');
+
+            elSpin.classList.remove('shown');
+
+            if (status == 200) {
+                var resp = JSON.parse(txt);
+                if (resp.posts.length == 0) {
+                    elErr.textContent = "No search results"
+                } else {
+                    resp.posts.forEach(function(post) {
+                        addResult(elRes, post);
+                    });
+                }
+            } else {
+                elErr.textContent = "Error running your search query.";
+            }   
+        }
+
+        function search(q) {
+            q = q.trim();
+            if (q) {
+                var elRes = document.querySelector('.search-results');
+                while (elRes.firstElementChild) { elRes.firstElementChild.remove(); }
+
+                elSpin.classList.add('shown')
+                document.querySelector('.search-error').textContent = "";
+                document.location.hash = q.trim();
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.addEventListener('load', handleSearchResults);
+
+                xhttp.open("GET", "/find?q=" + q);
+                xhttp.send();
+            }
+        }
+
+        var box = document.getElementById('searchbox');
+        box.addEventListener('keyup', function(ev) {
+            if (ev.key == 'Enter') { search(ev.target.value); } 
+        });
+
+        var btn = document.querySelector('.search-button');
+        btn.addEventListener('click', function() { search(box.value); });
+
+        if (document.location.hash) {
+            search(document.location.hash.substring(1));
+        }
+    </script>
+
+</div>`);
